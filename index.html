@@ -3,84 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGBSDC</title>
+    <title>MGBSDC - Motijheel Govt. Boys' School Debating Club</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="shortcut icon" href="favicon.ico">
-<link rel="manifest" href="site.webmanifest">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
 
     <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            <img src="https://scontent.fdac169-1.fna.fbcdn.net/v/t39.30808-6/455051551_1006764134581617_1836884552144366507_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFcQjfpqb9SmZuapDap10RcRjHk6Vc7kGFGMeTpVzuQYZedEbcq8eA7ntLFjeSle1XaqAqxWNpA6J0cJogOIThS&_nc_ohc=Phb05fvXdhQQ7kNvwFB0oqN&_nc_oc=AdkLPSHIUPWI428I_EMzPmQUwd77F5O-cQCnbI4LZ5wRMkT4bOP27yR7UQl3Uv1HOFY&_nc_zt=23&_nc_ht=scontent.fdac169-1.fna&_nc_gid=o2PGrOdL8vTGqamJkVMREg&oh=00_AfuGaxaFTQiqpoIvumUserSiReEnjUpn9FZOqiiRgjcWhQ&oe=6989323C" alt="MGBSDC Logo">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://github.com/witcher-cx/Debate/blob/main/image.png?raw=true" alt="MGBSDC">
+                <span class="logo-text">MGBSDC</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#about">About Club</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
     </nav>
 
     <!-- Hero Section -->
-    <header>
+    <section class="hero">
         <div class="hero-content">
-            <h1>Motijheel Govt. Boys’ School Debating Club</h1>
-            <p>Fostering critical thinkers and eloquent leaders since 1996</p>
-            <a href="#events" class="btn-primary">Explore Events</a>
+            <div class="hero-badge">Est. 1996</div>
+            <h1 class="hero-title">
+                <span class="title-line">Motijheel Govt.</span>
+                <span class="title-line">Boys' School</span>
+                <span class="title-line gradient-text">Debating Club</span>
+            </h1>
+            <p class="hero-subtitle">Fostering critical thinkers and eloquent leaders for nearly three decades</p>
+            <div class="hero-buttons">
+                <a href="#events" class="btn btn-primary">
+                    <span>Explore Events</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Join Us</span>
+                    <i class="fas fa-users"></i>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>29</h3>
+                    <p>Years Active</p>
+                </div>
+                <div class="stat-item">
+                    <h3>18</h3>
+                    <p>Nationals Held</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Debaters Trained</p>
+                </div>
+            </div>
         </div>
         <div class="hero-image">
-            <img src="https://scontent.fdac169-1.fna.fbcdn.net/v/t39.30808-6/486262703_1162559459002083_6426954418197538418_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG5F7f-ACSCHfjw2b-Syi170hc5aNXB-DzSFzlo1cH4POIqpu7AQh0il4hWv6henBYPMSkWl37RDqHSahnctnBq&_nc_ohc=YZdplm8u2JMQ7kNvwFHofoH&_nc_oc=AdnMqvi68P91KErzzrFn3iPrFHyaHiuot8Hoz3vJtdJfHZg-UaVJ6beVODSMZo9DQtg&_nc_zt=23&_nc_ht=scontent.fdac169-1.fna&_nc_gid=0520SdB2Yw-aitixEE272g&oh=00_AftQJBERoRqDQZR4Q_hedQog9P39G9O_ScEmQFZUf3_Ivw&oe=69892619" alt="Group Photo">
+            <div class="image-wrapper">
+                <img src="https://scontent.fdac169-1.fna.fbcdn.net/v/t39.30808-6/486262703_1162559459002083_6426954418197538418_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG5F7f-ACSCHfjw2b-Syi170hc5aNXB-DzSFzlo1cH4POIqpu7AQh0il4hWv6henBYPMSkWl37RDqHSahnctnBq&_nc_ohc=YZdplm8u2JMQ7kNvwFHofoH&_nc_oc=AdnMqvi68P91KErzzrFn3iPrFHyaHiuot8Hoz3vJtdJfHZg-UaVJ6beVODSMZo9DQtg&_nc_zt=23&_nc_ht=scontent.fdac169-1.fna&_nc_gid=0520SdB2Yw-aitixEE272g&oh=00_AftQJBERoRqDQZR4Q_hedQog9P39G9O_ScEmQFZUf3_Ivw&oe=69892619" alt="MGBSDC Team">
+                <div class="image-glow"></div>
+            </div>
         </div>
-    </header>
-
-    <!-- About Club -->
-    <section id="about" class="section">
-        <h2>About the Club</h2>
-        <p>Founded on 16 July 1996, MGBSDC has nurtured some of Bangladesh’s top debaters. With 18 national debate competitions organized and a legacy of intellectual excellence, we inspire students in leadership, reasoning, and communication.</p>
-    </section>
-
-    <!-- Events -->
-    <section id="events" class="section events">
-        <h2>Upcoming Event: 19th Nationals Debate Competition</h2>
-        <p><strong>Date:</strong> 18–20 December 2025 | <strong>Venue:</strong> Motijheel Govt. Boys’ High School & College</p>
-<br>
-<br/>
-        <h1>Past Events</h1>
-        <img src="https://scontent.fdac169-1.fna.fbcdn.net/v/t39.30808-6/485730194_1163267872264575_8432937828597810242_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHGPadEVCIR_h_UCvkxa-AxrNajOt9eSC6s1qM6315ILlP2yGo3DnSedD8WihgmprFd-DvU9-ka25gXQlyaZIu_&_nc_ohc=qRG31d2j9MwQ7kNvwH9kbE6&_nc_oc=Adk-cyaWDJFQ9QUTs6Tw0dhF5w_gH8Eo4PzPIMiI2NU0QNh_1UqC3G6dNj-rK4MLj0I&_nc_zt=23&_nc_ht=scontent.fdac169-1.fna&_nc_gid=DEEiMtTqGiNcm8QcO6uDTA&oh=00_AfvjsKiOIv1MBrWBLAwlAMD4Qt1QmaKcroxBYQxbbGxoAA&oe=6989380C" alt="18th Nationals Poster">
-        <ul class="event-features">
-            <li><i class="fas fa-trophy"></i> Inter School–College Debate Competition</li>
-            <li><i class="fas fa-university"></i> Inter University Debate Competition</li>
-            <li><i class="fas fa-users"></i> Audience aged 10–28, trained in critical thinking</li>
-            <li><i class="fas fa-handshake"></i> Sponsor collaboration opportunities</li>
-        </ul>
-    </section>
-
-    <!-- Gallery -->
-    <section id="gallery" class="section gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <img src="https://scontent.fdac169-1.fna.fbcdn.net/v/t39.30808-6/518374366_1251356153455746_8671212717538590977_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEvgciiid0U7CxSPzxBj6zg60oad-XaTMXrShp35dpMxcucmYM3FB_rcbjITlIQ5NjSpKwXK92LsRKnLdQzYKQX&_nc_ohc=F6LKxoizW-sQ7kNvwF7JUuX&_nc_oc=Adk06JnoYpdyLWLaKItY08HiAgnzczpcB0mPaTRVkoEdZ_4gmQD2UJa2PFxzDuKVNYo&_nc_zt=23&_nc_ht=scontent.fdac169-1.fna&_nc_gid=hZOcNRgQ2HvBA2knKT_OTQ&oh=00_Afu7OY-geuf2M9uhg_5ByM_ga7hLpkChHTqmnr5tmKEnBQ&oe=6989461A" alt="Trophies">
-            <img src="https://scontent.fdac169-1.fna.fbcdn.net/v/t39.30808-6/486262703_1162559459002083_6426954418197538418_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG5F7f-ACSCHfjw2b-Syi170hc5aNXB-DzSFzlo1cH4POIqpu7AQh0il4hWv6henBYPMSkWl37RDqHSahnctnBq&_nc_ohc=YZdplm8u2JMQ7kNvwFHofoH&_nc_oc=AdnMqvi68P91KErzzrFn3iPrFHyaHiuot8Hoz3vJtdJfHZg-UaVJ6beVODSMZo9DQtg&_nc_zt=23&_nc_ht=scontent.fdac169-1.fna&_nc_gid=0520SdB2Yw-aitixEE272g&oh=00_AftQJBERoRqDQZR4Q_hedQog9P39G9O_ScEmQFZUf3_Ivw&oe=69892619" alt="Group Photo">
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:mgbsdc25@gmail.com">mgbsdc25@gmail.com</a></p>
-        <p>Phone: <a href="tel:+8801798859585">01798859585</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/mgbsdc" target="_blank">MGBSDC</a></p>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Legacy</span>
+                <h2 class="section-title">About the Club</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead-text">Founded on July 16, 1996, the Motijheel Government Boys' School Debating Club has been at the forefront of nurturing Bangladesh's brightest debating minds for nearly three decades.</p>
+                    <p>We've successfully organized 18 national debate competitions, creating a platform where critical thinking meets eloquent expression. Our club has become a breeding ground for future leaders, lawyers, journalists, and changemakers.</p>
+                    <div class="about-features">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Critical Thinking</h3>
+                            <p>Developing analytical minds through rigorous debate training</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-microphone"></i>
+                            </div>
+                            <h3>Public Speaking</h3>
+                            <p>Building confidence and eloquence in young orators</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3>Competitive Excellence</h3>
+                            <p>Preparing champions for national and international platforms</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>© 2025 MGBS Debate Club | Designed By Araf Al Samin</p>
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What's Happening</span>
+                <h2 class="section-title">Events & Competitions</h2>
+            </div>
+            
+            <!-- Featured Event -->
+            <div class="featured-event">
+                <div class="event-badge">Upcoming</div>
+                <div class="event-content">
+                    <h3 class="event-title">19th Nationals Debate Competition</h3>
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>December 18-20, 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Motijheel Govt. Boys' High School & College</span>
+                        </div>
+                    </div>
+                    <div class="event-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>Inter School–College Debate Competition</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-university"></i>
+                            <span>Inter University Debate Competition</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <span>Ages 10–28 | Critical Thinking Focus</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-handshake"></i>
+                            <span>Sponsorship Opportunities Available</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Register Now</a>
+                </div>
+                <div class="event-image">
+                    <img src="https://github.com/witcher-cx/Debate/blob/main/download3.jpg?raw=true" alt="18th Nationals">
+                </div>
+            </div>
+
+            <!-- Past Events Timeline -->
+            <div class="timeline-section">
+                <h3 class="timeline-title">Our Tournament Legacy</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">1996</span>
+                            <h4>Club Founded</h4>
+                            <p>MGBSDC established with a vision to nurture debating talent</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023</span>
+                            <h4>18th Nationals</h4>
+                            <p>Record-breaking participation with 150+ teams nationwide</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025</span>
+                            <h4>19th Nationals</h4>
+                            <p>Our biggest event yet with expanded categories</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Excellence</span>
+                <h2 class="section-title">Our Achievements</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>18 National Championships</h3>
+                    <p>Successfully organized and hosted, setting the standard for debate excellence</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Top National Debaters</h3>
+                    <p>Produced champions who've represented Bangladesh internationally</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>500+ Alumni</h3>
+                    <p>A network of successful professionals across diverse fields</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Legacy of Excellence</h3>
+                    <p>29 years of fostering leadership and critical thinking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Moments</span>
+                <h2 class="section-title">Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <img src="https://scontent.fdac169-1.fna.fbcdn.net/v/t39.30808-6/518374366_1251356153455746_8671212717538590977_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEvgciiid0U7CxSPzxBj6zg60oad-XaTMXrShp35dpMxcucmYM3FB_rcbjITlIQ5NjSpKwXK92LsRKnLdQzYKQX&_nc_ohc=F6LKxoizW-sQ7kNvwF7JUuX&_nc_oc=Adk06JnoYpdyLWLaKItY08HiAgnzczpcB0mPaTRVkoEdZ_4gmQD2UJa2PFxzDuKVNYo&_nc_zt=23&_nc_ht=scontent.fdac169-1.fna&_nc_gid=hZOcNRgQ2HvBA2knKT_OTQ&oh=00_Afu7OY-geuf2M9uhg_5ByM_ga7hLpkChHTqmnr5tmKEnBQ&oe=6989461A" alt="Trophies">
+                    <div class="gallery-overlay">
+                        <h3>Championship Trophies</h3>
+                        <p>Celebrating excellence</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/witcher-cx/Debate/blob/main/download2.jpg?raw=true" alt="Team Photo">
+                    <div class="gallery-overlay">
+                        <h3>Our Team</h3>
+                        <p>United in excellence</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/witcher-cx/Debate/blob/main/download.jpg?raw=true" alt="Event Poster">
+                    <div class="gallery-overlay">
+                        <h3>18th Nationals</h3>
+                        <p>Historic tournament</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>Have questions about our club, want to participate in our events, or interested in sponsorship opportunities? We'd love to hear from you!</p>
+                    <div class="contact-methods">
+                        <a href="mailto:mgbsdc25@gmail.com" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <span class="method-label">Email</span>
+                                <span class="method-value">mgbsdc25@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+8801798859585" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-info">
+                                <span class="method-label">Phone</span>
+                                <span class="method-value">+880 1798 859585</span>
+                            </div>
+                        </a>
+                        <a href="https://www.facebook.com/mgbsdc" target="_blank" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                            <div class="method-info">
+                                <span class="method-label">Facebook</span>
+                                <span class="method-value">@mgbsdc</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <div class="cta-card">
+                        <h3>Join Our Community</h3>
+                        <p>Become part of Bangladesh's premier debating club and unlock your potential</p>
+                        <a href="mailto:mgbsdc25@gmail.com" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://scontent.fdac169-1.fna.fbcdn.net/v/t39.30808-6/455051551_1006764134581617_1836884552144366507_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFcQjfpqb9SmZuapDap10RcRjHk6Vc7kGFGMeTpVzuQYZedEbcq8eA7ntLFjeSle1XaqAqxWNpA6J0cJogOIThS&_nc_ohc=Phb05fvXdhQQ7kNvwFB0oqN&_nc_oc=AdkLPSHIUPWI428I_EMzPmQUwd77F5O-cQCnbI4LZ5wRMkT4bOP27yR7UQl3Uv1HOFY&_nc_zt=23&_nc_ht=scontent.fdac169-1.fna&_nc_gid=o2PGrOdL8vTGqamJkVMREg&oh=00_AfuGaxaFTQiqpoIvumUserSiReEnjUpn9FZOqiiRgjcWhQ&oe=6989323C" alt="MGBSDC">
+                    <h3>MGBSDC</h3>
+                    <p>Fostering excellence since 1996</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/mgbsdc" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="mailto:mgbsdc25@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+8801798859585"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MGBS Debate Club. All rights reserved.</p>
+                <p class="designer-credit">Designed by <span class="gradient-text">Araf Al Samin</span></p>
+            </div>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
+</body>
+</html>
