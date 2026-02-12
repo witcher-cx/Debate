@@ -42,7 +42,7 @@ const interactiveElements = document.querySelectorAll('a, button, .btn, .gallery
 interactiveElements.forEach(element => {
     element.addEventListener('mouseenter', () => {
         cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.😎';
+        cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.8)';
         cursorFollower.style.borderColor = 'var(--gradient-3)';
     });
     
@@ -135,7 +135,7 @@ window.addEventListener('scroll', () => {
     const heroImage = document.querySelector('.hero-image');
     
     if (heroImage) {
-        heroImage.style.transform = translateY(${scrolled * 0.3}px);
+        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
     }
 });
 
@@ -197,33 +197,13 @@ buttons.forEach(button => {
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
         
-        button.style.transform = translate(${x * 0.2}px, ${y * 0.2}px);
+        button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
     });
     
     button.addEventListener('mouseleave', () => {
         button.style.transform = 'translate(0, 0)';
     });
 });
-
-// ===== TYPING EFFECT FOR HERO TITLE (Optional) =====
-/*
-const heroTitle = document.querySelector('.hero-title');
-if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    let i = 0;
-    
-    function typeWriter() {
-        if (i < text.length) {
-            heroTitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 50);
-        }
-    }
-    
-    setTimeout(typeWriter, 500);
-}
-*/
 
 // ===== GRADIENT ORBS MOUSE TRACKING =====
 document.addEventListener('mousemove', (e) => {
@@ -233,7 +213,7 @@ document.addEventListener('mousemove', (e) => {
     
     orbs.forEach((orb, index) => {
         const speed = (index + 1) * 20;
-        orb.style.transform = translate(${x * speed}px, ${y * speed}px);
+        orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
     });
 });
 
@@ -244,9 +224,9 @@ function createRipple(event) {
     const diameter = Math.max(button.clientWidth, button.clientHeight);
     const radius = diameter / 2;
     
-    circle.style.width = circle.style.height = ${diameter}px;
-    circle.style.left = ${event.clientX - button.offsetLeft - radius}px;
-    circle.style.top = ${event.clientY - button.offsetTop - radius}px;
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
     circle.classList.add('ripple');
     
     const ripple = button.getElementsByClassName('ripple')[0];
@@ -276,7 +256,7 @@ cards.forEach(card => {
         const rotateX = (y - centerY) / 10;
         const rotateY = (centerX - x) / 10;
         
-        card.style.transform = perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02);
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
     });
     
     card.addEventListener('mouseleave', () => {
@@ -313,7 +293,7 @@ function highlightNavLink() {
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === #${sectionId}) {
+                if (link.getAttribute('href') === `#${sectionId}`) {
                     link.classList.add('active');
                 }
             });
@@ -342,8 +322,8 @@ images.forEach(img => imageObserver.observe(img));
 // ===== PERFORMANCE: Reduce animations on mobile =====
 if (window.innerWidth < 768) {
     // Disable cursor effects on mobile
-    cursor.style.display = 'none';
-    cursorFollower.style.display = 'none';
+    if(cursor) cursor.style.display = 'none';
+    if(cursorFollower) cursorFollower.style.display = 'none';
     
     // Simplify animations
     cards.forEach(card => {
