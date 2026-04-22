@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - MGBSDC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dz7ulk8lb/image/upload/v1776680144/Gemini_Generated_Image_a5pf80a5pf80a5pf-removebg-preview_qv4hvj.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .events-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .event-image-link {
+            display: inline-block;
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .event-image {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+            cursor: zoom-in;
+        }
+
+        .event-image-link:hover .event-image {
+            transform: scale(1.02);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+            filter: brightness(1.07);
+        }
+
+        .image-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.88);
+            padding: 20px;
+            cursor: zoom-out;
+        }
+
+        .image-lightbox.active {
+            display: flex;
+        }
+
+        .image-lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <!-- SIMPLE FAST PRELOADER -->
+    <div id="simple-preloader">
+        <img src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/MGBSDC%20Symbol.png" alt="MGBSDC Logo" class="preloader-logo">
+    </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://res.cloudinary.com/dz7ulk8lb/image/upload/v1776592497/MGBSDC_Logo_borderless_gxjdea.png" alt="MGBSDC">
+                <span>MGBSDC</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="leadership.html" class="nav-link">Leadership</a></li>
+                <li><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li><a href="debaters.html" class="nav-link">Hall of Fame</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="executive committee.html" class="nav-link">Executive Committee</a></li>
+                <li><a href="proddot.html" class="nav-link">Proddot</a></li>
+                <li><a href="credits.html" class="nav-link">Credits</a></li>
+            </ul>
+            <a href="https://hymglpkvb5.zite.so" target="_blank" class="cta-button">
+                <span>Join Us</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </a>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <section class="page-hero" style="padding: 160px 0 36px;">
+        <div class="container">
+            <h1 class="page-title" style="font-family: var(--font-display); font-size: 4rem; margin-bottom: 20px;">Events</h1>
+        </div>
+    </section>
+    <section style="padding: 36px 0 80px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 32px;">
+                <p style="color: var(--gray);">Highlights from MGBSDC events and campaigns.</p>
+            </div>
+            <div class="events-gallery">
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/18th.jpg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/18th.jpg" alt="MGBSDC 18th Nationals Event">
+                </a>
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/17th.jpeg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/17th.jpeg" alt="MGBSDC 17th Nationals Event">
+                </a>
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event.jpeg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event.jpeg" alt="MGBSDC Event Poster">
+                </a>
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event1.jpeg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event1.jpeg" alt="MGBSDC Event Photo 1">
+                </a>
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event1.jpg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event1.jpg" alt="MGBSDC Event Banner 1">
+                </a>
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event2.jpeg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event2.jpeg" alt="MGBSDC Event Photo 2">
+                </a>
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event2.jpg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event2.jpg" alt="MGBSDC Event Banner 2">
+                </a>
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event3.jpeg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event3.jpeg" alt="MGBSDC Event Photo 3">
+                </a>
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event4.jpeg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event4.jpeg" alt="MGBSDC Event Photo 4">
+                </a>
+                <a class="event-image-link" href="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event5.jpeg">
+                    <img class="event-image" src="https://tlzmrvxysbdgzdikdpox.supabase.co/storage/v1/object/public/MGBSDC%20MC/Event5.jpeg" alt="MGBSDC Event Photo 5">
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+        <img id="lightboxImage" src="" alt="Full size event image">
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://res.cloudinary.com/dz7ulk8lb/image/upload/v1776592497/MGBSDC_Logo_borderless_gxjdea.png" alt="MGBSDC">
+                    <h3>MGBSDC</h3>
+                    <p>Where words become power</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="achievements.html">Achievements</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/mgbsdc" target="_blank">Facebook</a></li>
+                        <li><a href="mailto:mgbsdc25@gmail.com">Email</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Get the latest news</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MGBSDC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const eventImageLinks = document.querySelectorAll('.event-image-link');
+
+        eventImageLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                lightboxImage.src = link.href;
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            lightboxImage.src = '';
+            document.body.style.overflow = '';
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.click();
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
