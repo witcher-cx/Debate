@@ -1,15 +1,15 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-    /* Modern Color Palette */
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary: #ec4899;
-    --accent: #8b5cf6;
+    /* Elegant, Single-Tone Professional Palette */
+    --primary: #1e3a8a; /* Deep Navy Blue */
+    --primary-dark: #172554;
+    --secondary: #3b82f6; /* Royal Blue Accent */
+    --accent: #d4af37; /* Honorable Gold */
     --success: #10b981;
     --dark: #0f172a;
     --dark-lighter: #1e293b;
     --gray: #64748b;
-    --light: #f1f5f9;
+    --light: #f8fafc;
     --white: #ffffff;
     
     /* Fonts */
@@ -17,20 +17,18 @@
     --font-mono: 'Space Mono', monospace;
     --font-body: 'Manrope', sans-serif;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    /* Clean Gradients */
+    --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    --gradient-accent: linear-gradient(135deg, #1e3a8a 0%, #d4af37 100%);
     
     /* Effects */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 40px rgba(30, 58, 138, 0.15);
     
     /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 /* ===== RESET ===== */
@@ -47,16 +45,17 @@ html {
 
 body {
     font-family: var(--font-body);
-    background:
-        radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.1), transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(236, 72, 153, 0.08), transparent 42%),
-        var(--white);
+    background: var(--light); /* Clean, professional off-white background */
     color: var(--dark);
     line-height: 1.6;
     overflow-x: hidden;
-    cursor: none;
-    position: relative;
-    isolation: isolate;
+}
+
+/* DELETED body::before and body::after so the background is completely clean and professional */
+
+/* Remove the floating orbs from the hero section */
+.hero-bg {
+    display: none;
 }
 
 /* Prevent long words/links from breaking mobile layouts */
@@ -155,14 +154,14 @@ body > * {
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: 10000;
-    mix-blend-mode: difference;
+    z-index: 9999999 !important; /* Keeps it above the image pop-up */
+    /* REMOVED mix-blend-mode so it never turns brown! */
 }
 
 .cursor-dot {
     width: 8px;
     height: 8px;
-    background: var(--primary);
+    background: var(--secondary); /* Beautiful royal blue */
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease, background 0.2s ease;
@@ -171,7 +170,7 @@ body > * {
 .cursor-outline {
     width: 40px;
     height: 40px;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--secondary); /* Beautiful royal blue */
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease;
@@ -186,6 +185,208 @@ a:hover ~ .cursor-outline,
 button:hover ~ .cursor-outline {
     width: 60px;
     height: 60px;
+}
+
+/* ===== EVENTS SECTION ===== */
+.events-section {
+    background: transparent;
+}
+
+/* ===== ACHIEVEMENTS PINTEREST MASONRY ===== */
+.achievements-masonry {
+    display: block;
+    column-count: 3;
+    column-gap: 30px;
+    margin-bottom: 50px;
+}
+@media (max-width: 1024px) { .achievements-masonry { column-count: 2; } }
+@media (max-width: 600px) { .achievements-masonry { column-count: 1; } }
+
+/* ===== EVENTS GRID (ONE LINE ON HOME PAGE) ===== */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forces 3 columns in one line */
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: start; /* Prevents cards from stretching vertically */
+}
+@media (max-width: 1024px) { .events-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .events-grid { grid-template-columns: 1fr; } }
+
+/* ===== SHARED CARD SETTINGS (NO STRETCHING) ===== */
+.event-card, .achievement-pin {
+    break-inside: avoid;
+    margin-bottom: 30px;
+    width: 100%;
+    background: var(--white); /* Solid white box */
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.event-card:hover, .achievement-pin:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.event-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+}
+
+/* Keeps natural image resolution */
+.event-image img, .achievement-pin img {
+    width: 100%;
+    height: auto !important; 
+    display: block;
+    object-fit: contain; 
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.event-card:hover .event-image img, .achievement-pin:hover img {
+    transform: scale(1.04);
+}
+
+.event-content {
+    padding: 24px;
+    background: var(--white);
+}
+
+.event-content h3 {
+    font-size: clamp(1.15rem, 3vw, 1.4rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.event-content p {
+    color: var(--gray);
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: clamp(0.92rem, 2.4vw, 1rem);
+}
+/* Fix for Home Page Transparent Box */
+.image-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 60px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1)) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+/* ===== LIGHTBOX WITH TEXT CAPTIONS ===== */
+.image-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: zoom-out;
+}
+
+.image-lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90vw;
+    max-height: 90vh;
+    cursor: auto;
+}
+
+.lightbox-content-wrapper img {
+    max-width: 100%;
+    max-height: 65vh; /* Gives text room to breathe below */
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    object-fit: contain;
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.image-lightbox.active .lightbox-content-wrapper img {
+    transform: scale(1);
+}
+
+.lightbox-caption {
+    color: #e2e8f0;
+    margin-top: 24px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    max-height: 20vh;
+    overflow-y: auto;
+    display: none;
+    padding: 0 15px;
+}
+
+.lightbox-caption.has-text {
+    display: block;
+    animation: fadeInUp 0.5s ease 0.2s both;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.lightbox-close:hover {
+    background: rgba(236, 72, 153, 0.8);
+    transform: scale(1.1);
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.event-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+}
+
+.event-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.08); /* Beautiful image zoom is back! */
 }
 
 /* ===== UTILITIES ===== */
@@ -803,31 +1004,6 @@ section {
     z-index: -1;
 }
 
-/* ===== EVENTS SECTION ===== */
-.events-section {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.03), rgba(236, 72, 153, 0.03));
-}
-
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.event-card {
-    background: var(--white);
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-}
-
-.event-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
 .event-image {
     position: relative;
     overflow: hidden;
@@ -841,8 +1017,9 @@ section {
     transition: var(--transition);
 }
 
+/* Removed the scale(1.1) so images stay perfectly still while the card lifts gracefully */
 .event-card:hover .event-image img {
-    transform: scale(1.1);
+    transform: none; 
 }
 
 .event-badge {
@@ -2286,53 +2463,251 @@ body.page-exit {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
+    padding-top: 20px;
+    /* Stops shorter cards from stretching */
+    align-items: start; 
 }
+
 .ec-year-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(245, 247, 255, 0.7));
-    border: 1px solid rgba(99,102,241,0.2);
-    border-radius: 20px;
-    padding: 35px 30px;
-    box-shadow: var(--shadow-md);
-    backdrop-filter: blur(10px);
-    transition: var(--transition);
+    /* Slightly darker glass effect so it pops on a light background */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+    border: 1px solid rgba(0, 0, 0, 0.08); /* Darker border for visibility */
+    border-top: 3px solid #C59B27; /* Solid prestige gold */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); /* Soft dark shadow */
 }
+
 .ec-year-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg), 0 0 0 2px rgba(99,102,241,0.3);
+    border-color: #C59B27;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 0 20px rgba(197, 155, 39, 0.15);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6));
 }
+
 .ec-year-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    color: var(--primary);
-    margin-bottom: 25px;
-    border-bottom: 2px dashed rgba(99,102,241,0.2);
-    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111827; /* Dark bold text for the year */
     text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.15); /* Visible dashed line */
+    letter-spacing: 1px;
 }
+
 .ec-member-list {
-    list-style: none;
+    margin: 0;
     padding: 0;
+    list-style: none; 
 }
+
 .ec-member-list li {
-    margin-bottom: 12px;
+    margin: 16px 0;
+    line-height: 1.4;
+    font-family: 'Manrope', sans-serif;
     font-size: 1.05rem;
-    color: var(--dark);
-    display: flex;
-    flex-direction: column;
+    font-weight: 600;
+    color: #334155; /* Dark slate gray for the names */
+    position: relative;
+    padding-left: 16px;
+    border-left: 2px solid rgba(0, 0, 0, 0.1); /* Visible left border */
+    transition: border-left-color 0.3s ease;
 }
+
+.ec-member-list li:hover {
+    border-left: 2px solid #C59B27; /* Gold line appears on hover */
+}
+
 .ec-member-list li strong {
-    color: var(--primary-dark);
-    font-size: 0.8rem;
+    display: block; 
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: #9A7B16; /* Darker, highly readable gold for the roles */
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 1.5px;
     margin-bottom: 4px;
-    background: rgba(99, 102, 241, 0.1);
-    width: fit-content;
-    padding: 2px 8px;
-    border-radius: 6px;
+    font-weight: 700;
 }
-.ec-member-group {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px dashed rgba(0,0,0,0.1);
+/* ===== 1. FIX: PROFESSIONAL LOGO HOVER (REPLACES THE SPIN) ===== */
+.logo:hover img {
+    transform: translateY(-3px) scale(1.08) !important; /* Smooth professional lift instead of a dizzy spin */
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.25);
+}
+
+/* ===== 2. FIX: VISIBLE MOBILE MENU IN DARK MODE ===== */
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    /* Using a bright gradient so it pops on BOTH white and black backgrounds */
+    background: linear-gradient(90deg, var(--primary), var(--secondary)) !important;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* ===== 3. NEW FEATURE: TITLE GLOW HIGHLIGHT ===== */
+.page-title {
+    position: relative;
+    display: inline-block;
+}
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 10px;
+    background: var(--primary);
+    opacity: 0.15;
+    border-radius: 10px;
+    filter: blur(6px);
+    z-index: -1;
+}
+
+/* ===== 4. NEW FEATURE: SCROLL PROGRESS BAR ===== */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    z-index: 100000;
+    width: 0%;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+    border-radius: 0 2px 2px 0;
+}
+/* ===== 1. COMPLETELY HIDE DEFAULT CURSOR ===== */
+*, *::before, *::after {
+    cursor: none !important; /* Forces the normal cursor to disappear everywhere */
+}
+
+/* ===== 2. FIX: ACHIEVEMENT & EVENT FACES GETTING CUT OFF ===== */
+.event-image {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+    border-radius: 16px;
+}
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* THIS line ensures people's faces (usually at the top) stay visible! */
+    object-position: top center; 
+    transition: filter 0.4s ease;
+}
+
+/* ===== 3. LIGHTBOX POP-UP ANIMATION (FADE & ZOOM) ===== */
+.image-lightbox {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.image-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+.image-lightbox img {
+    transform: scale(0.85); /* Starts slightly smaller */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.image-lightbox.active img {
+    transform: scale(1); /* Zooms to full size smoothly */
+}
+
+/* ===== 4. PREMIUM "TRESMARES" INSPIRED AMBIENT BACKGROUND ===== */
+body {
+    background-color: var(--light);
+    position: relative;
+    z-index: 0;
+}
+/* Creates a slow, sophisticated, fluid mesh in the background */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 60% 60%, rgba(30, 58, 138, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 30%);
+    animation: tresmaresDrift 25s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+@keyframes tresmaresDrift {
+    0% { transform: rotate(0deg) translate(0, 0) scale(1); }
+    50% { transform: rotate(2deg) translate(-2%, 2%) scale(1.05); }
+    100% { transform: rotate(-2deg) translate(2%, -2%) scale(1); }
+}
+/* ===== 1. FIX CURSOR HIDING BEHIND LIGHTBOX ===== */
+.cursor-dot, .cursor-outline {
+    z-index: 9999999 !important; /* Extremely high so it stays above the pop-up */
+}
+
+*, *::before, *::after {
+    cursor: none !important; 
+}
+
+/* ===== 2. RESTORE THE IMAGE ZOOM HOVER ===== */
+.event-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+.event-image {
+    overflow: hidden; /* Ensures the zoomed image doesn't break out of the box */
+    position: relative;
+    border-radius: 16px;
+    /* REMOVED the forced aspect-ratio and top-center crop */
+}
+.event-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* This brings back the inner-image zoom effect! */
+.event-card:hover .event-image img {
+    transform: scale(1.08); 
+}
+
+/* ===== 3. NEW FEATURE: ADAPTIVE MASONRY GRID FOR ACHIEVEMENTS ===== */
+.achievements-masonry {
+    column-count: 3; /* 3 columns on desktop */
+    column-gap: 30px;
+}
+
+.achievements-masonry .event-card {
+    break-inside: avoid; /* Stops an image from splitting across columns */
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+}
+
+.achievements-masonry .event-image img {
+    object-fit: contain; /* Lets the image exist in its natural aspect ratio */
+}
+
+/* Responsive Masonry Layout */
+@media (max-width: 1024px) {
+    .achievements-masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .achievements-masonry {
+        column-count: 1;
+    }
 }

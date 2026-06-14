@@ -44,13 +44,15 @@ if (cursorDot && cursorOutline) {
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
 
 // ===== MOBILE MENU =====
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -244,22 +246,10 @@ document.querySelectorAll('img[data-src]').forEach(img => {
     imageObserver.observe(img);
 });
 
-// ===== SIMPLE PRELOADER & PAGE TRANSITION LOGIC =====
 window.addEventListener('DOMContentLoaded', () => {
     const preloader = document.getElementById('simple-preloader');
-    
     if (preloader) {
-        // Check if the user has already loaded the site in this session
-        if (!sessionStorage.getItem('siteLoaded')) {
-            // FIRST TIME: Show the cool spinning logo, then fade out
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-                sessionStorage.setItem('siteLoaded', 'true');
-            }, 1000); // Wait 1 second before hiding
-        } else {
-            // ALREADY LOADED: Hide the loader instantly, skip straight to the page transition
-            preloader.style.display = 'none';
-        }
+        preloader.style.display = 'none';
     }
 });
 
